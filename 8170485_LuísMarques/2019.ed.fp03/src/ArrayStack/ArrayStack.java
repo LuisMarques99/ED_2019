@@ -123,7 +123,7 @@ public class ArrayStack<T> implements StackADT<T> {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("-> Array: <-\n");
-        for (int i = 0; i < stack.length; i++) {
+        for (int i = 0; i < top; i++) {
             string.append("[").append(i).append("]  ");
             string.append(stack[i]).append("\n");
         }
