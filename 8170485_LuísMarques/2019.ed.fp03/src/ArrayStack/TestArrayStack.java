@@ -1,13 +1,13 @@
-package General;
+package ArrayStack;
 
-import ArrayStack.ArrayStack;
+import Default.EmptyCollectionException;
 
 /**
  * <h3>
  * <strong>DEMO class to test the classes implemented in the project</strong>
  * </h3>
  */
-public class DEMO {
+public class TestArrayStack {
     public static void main(String[] args) {
         ArrayStack<String> stack = new ArrayStack<String>();
         stack.push("Hello");
