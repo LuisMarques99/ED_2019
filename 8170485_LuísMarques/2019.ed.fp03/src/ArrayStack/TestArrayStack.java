@@ -6,6 +6,8 @@ import Default.EmptyCollectionException;
  * <h3>
  * <strong>DEMO class to test the classes implemented in the project</strong>
  * </h3>
+ *
+ * @author Luis Marques
  */
 public class TestArrayStack {
     public static void main(String[] args) {

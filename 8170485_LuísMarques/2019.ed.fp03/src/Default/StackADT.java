@@ -1,6 +1,4 @@
-package ArrayStack;
-
-import Default.EmptyCollectionException;
+package Default;
 
 /**
  * <h3>

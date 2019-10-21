@@ -1,6 +1,7 @@
 package ArrayStack;
 
 import Default.EmptyCollectionException;
+import Default.StackADT;
 
 /**
  * <h3>
