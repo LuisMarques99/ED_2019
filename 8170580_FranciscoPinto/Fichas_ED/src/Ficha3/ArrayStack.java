@@ -29,7 +29,11 @@ public class ArrayStack<T> implements StackADT<T> {
 	 * Metodo responsavel por expandir o tamanho do ArrayStack caso este se encontre cheio!
 	 */
 	public void expandCapacity() {
-		//...
+        @SuppressWarnings("unchecked")
+		T[] newStack = (T[]) (new Object[stack.length + DEFAULT_CAPACITY]);
+        for (int i = 0; i < stack.length; i++)
+        newStack[i] = stack[i];
+        stack = newStack;
 	}
 	
 
@@ -76,6 +80,5 @@ public class ArrayStack<T> implements StackADT<T> {
 	@Override
 	public int size() {
 		return top;
-	}
-	
+	}	
 }

@@ -4,7 +4,8 @@ public class TesteLinkedStack {
 
 	public static void main(String[] args) throws EmptyCollectionException {
 		// TODO Auto-generated method stub
-		LinkedStack<Integer> m1 = new LinkedStack<Integer>();
+		//Se eu puser StackADT ao inicio significa que posso utilizar LinkedStack ou ArrayStack sem ter de modificar nada abaixo!
+		StackADT<Integer> m1 = new LinkedStack<Integer>();
 		//m1.pop();
 		m1.push(1);
 		m1.push(2);
