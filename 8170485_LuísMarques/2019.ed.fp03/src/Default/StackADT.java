@@ -2,7 +2,7 @@ package Default;
 
 /**
  * <h3>
- * <strong>Interface that implements the contract of an {@link StackADT StackADT} (Abstract Data Type Stack)</strong>
+ * <strong>Interface that implements the contract of a {@link StackADT StackADT} (Abstract Data Type Stack)</strong>
  * </h3>
  *
  * @param <T> Abstract Data Type

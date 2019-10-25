@@ -17,7 +17,7 @@ public class LinkedStack<T> implements StackADT<T> {
     /**
      * int that represents the number of elements of the {@link LinkedStack Linked Stack}
      */
-    private int count = 0;
+    private int count;
 
     /**
      * {@link LinearNode Linear Node} that represents the top node of the {@link LinkedStack Linked Stack}
@@ -28,9 +28,10 @@ public class LinkedStack<T> implements StackADT<T> {
      * Creates an empty {@link LinkedStack Linked Stack}.
      */
     public LinkedStack() {
+        count = 0;
         top = null;
     }
-    
+
     /**
      * Adds one element to the top of this stack.
      *
@@ -71,7 +72,7 @@ public class LinkedStack<T> implements StackADT<T> {
         if (isEmpty())
             throw new EmptyCollectionException("Stack");
 
-        return (T) top;
+        return top.getElement();
     }
 
     /**

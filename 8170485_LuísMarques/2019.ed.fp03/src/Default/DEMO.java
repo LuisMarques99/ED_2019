@@ -23,7 +23,12 @@ public class DEMO {
             case 1:
                 stack.push("Ola");
                 stack.push("Mundo");
-                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                System.out.print(stack.toString() + "\n\nSize: " + stack.size());
+                try {
+                    System.out.print("\n\nTop: " + stack.peek());
+                } catch (EmptyCollectionException e) {
+                    System.err.println(e.getMessage());
+                }
                 break;
             case 2:
                 try {
@@ -41,7 +46,12 @@ public class DEMO {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 System.out.println("\n\n*You tried to remove an element!*\n\n");
-                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                System.out.println(stack.toString() + "\n\nSize: " + stack.size());
+                try {
+                    System.out.print("\n\nTop: " + stack.peek());
+                } catch (EmptyCollectionException e) {
+                    System.err.println(e.getMessage());
+                }
                 break;
             case 4:
                 stack.push("H");
@@ -50,6 +60,11 @@ public class DEMO {
                 stack.push("L");
                 stack.push("O");
                 System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                try {
+                    System.out.print("\n\nTop: " + stack.peek());
+                } catch (EmptyCollectionException e) {
+                    System.err.println(e.getMessage());
+                }
                 break;
             case 5:
                 stack.push("H");
@@ -58,6 +73,11 @@ public class DEMO {
                 stack.push("L");
                 stack.push("O");
                 System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                try {
+                    System.out.print("\n\nTop: " + stack.peek());
+                } catch (EmptyCollectionException e) {
+                    System.err.println(e.getMessage());
+                }
                 System.out.println("\n\nREMOVING 5 ELEMENTS...\n\n");
 
                 try {
@@ -92,6 +112,11 @@ public class DEMO {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                try {
+                    System.out.print("\n\nTop: " + stack.peek());
+                } catch (EmptyCollectionException e) {
+                    System.err.println(e.getMessage());
+                }
                 break;
         }
     }
