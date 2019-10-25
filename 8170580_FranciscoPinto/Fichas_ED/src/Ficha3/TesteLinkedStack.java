@@ -23,5 +23,16 @@ public class TesteLinkedStack {
 		System.out.println("List empty: " + m2.isEmpty());
 		System.out.println("Top element: " + m2.peek());
 		System.out.println("Size: " + m2.size());
+		
+		System.out.println("\n==================================\n");
+		
+		LinkedStackLinearNode<Integer> m3 = new LinkedStackLinearNode<>();
+		m3.push(1);
+		m3.push(2);
+		m3.pop();
+
+		System.out.println("List empty: " + m3.isEmpty());
+		System.out.println("Top element: " + m3.peek());
+		System.out.println("Size: " + m3.size());
 	}
 }

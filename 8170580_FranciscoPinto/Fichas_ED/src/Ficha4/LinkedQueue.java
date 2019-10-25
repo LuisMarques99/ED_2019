@@ -11,7 +11,7 @@ public class LinkedQueue<T> implements QueueADT<T>{
 	 */
 	public LinkedQueue() {
 		this.head = null;
-		this.tail = null;
+		this.tail = null; 
 		count = 0;
 	}
 
@@ -19,7 +19,8 @@ public class LinkedQueue<T> implements QueueADT<T>{
 	public void enqueue(T element) {
 		// TODO Auto-generated method stub
 		if(head == null) {
-			tail = head = element;
+			tail = element;
+			head = element;
 			count++;
 		}
 		else {
@@ -45,7 +46,7 @@ public class LinkedQueue<T> implements QueueADT<T>{
 			count--;
 		}
 		else {
-			head = null;
+			head = null; //Nao sei como é suposto fazer com que head avance para o proximo elemento!!!!!!
 			count--;
 		}
 		return head;
