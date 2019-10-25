@@ -30,9 +30,7 @@ public class LinkedStack<T> implements StackADT<T> {
     public LinkedStack() {
         top = null;
     }
-
-
-
+    
     /**
      * Adds one element to the top of this stack.
      *
