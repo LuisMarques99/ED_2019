@@ -3,7 +3,8 @@ package LinkedStack;
 /**
  * Class that represents the structure of a {@link LinearNode Linear Node}
  *
- * @param <T>
+ * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public class LinearNode<T> {
     /**

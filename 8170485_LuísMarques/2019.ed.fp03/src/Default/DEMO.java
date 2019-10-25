@@ -1,6 +1,9 @@
-package ArrayStack;
+package Default;
 
-import Default.EmptyCollectionException;
+import ArrayStack.ArrayStack;
+import LinkedStack.LinkedStack;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * <h3>
@@ -9,79 +12,86 @@ import Default.EmptyCollectionException;
  *
  * @author Luis Marques
  */
-public class TestArrayStack {
+public class DEMO {
     public static void main(String[] args) {
 
-        ArrayStack<String> arrayStack = new ArrayStack<String>(3);
+        StackADT<String> stack = new LinkedStack<String>();
 
-        int test = 5;
+        int test = 1;
 
         switch (test) {
             case 1:
-                arrayStack.push("Ola");
-                arrayStack.push("Mundo");
-                System.out.println(arrayStack.toString() + "\n Top: " + arrayStack.size());
+                stack.push("Ola");
+                stack.push("Mundo");
+                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
                 break;
             case 2:
                 try {
-                    arrayStack.pop();
+                    stack.pop();
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 break;
             case 3:
-                arrayStack.push("I'LL BE BACK!");
-                System.out.println(arrayStack.toString() + "\n Top: " + arrayStack.size());
+                stack.push("I'LL BE BACK!");
+                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
                 try {
-                    arrayStack.pop();
+                    stack.pop();
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 System.out.println("\n\n*You tried to remove an element!*\n\n");
-                System.out.println(arrayStack.toString() + "\n Top: " + arrayStack.size());
+                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
                 break;
             case 4:
-                arrayStack.push("H");
-                arrayStack.push("E");
-                arrayStack.push("L");
-                arrayStack.push("L");
-                arrayStack.push("O");
-                System.out.println(arrayStack.toString() + "\n Top: " + arrayStack.size());
+                stack.push("H");
+                stack.push("E");
+                stack.push("L");
+                stack.push("L");
+                stack.push("O");
+                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
                 break;
             case 5:
-                arrayStack.push("H");
-                arrayStack.push("E");
-                arrayStack.push("L");
-                arrayStack.push("L");
-                arrayStack.push("O");
-                System.out.println(arrayStack.toString() + "\n Top: " + arrayStack.size());
+                stack.push("H");
+                stack.push("E");
+                stack.push("L");
+                stack.push("L");
+                stack.push("O");
+                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
                 System.out.println("\n\nREMOVING 5 ELEMENTS...\n\n");
+
                 try {
-                    arrayStack.pop();
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    System.err.println(e.getMessage());
+                }
+
+                try {
+                    stack.pop();
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 try {
-                    arrayStack.pop();
+                    stack.pop();
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 try {
-                    arrayStack.pop();
+                    stack.pop();
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 try {
-                    arrayStack.pop();
+                    stack.pop();
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
                 try {
-                    arrayStack.pop();
+                    stack.pop();
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
-                System.out.println(arrayStack.toString() + "\n Top: " + arrayStack.size());
+                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
                 break;
         }
     }

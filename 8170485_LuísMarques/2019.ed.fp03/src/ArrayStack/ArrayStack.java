@@ -37,6 +37,11 @@ public class ArrayStack<T> implements StackADT<T> {
         stack = (T[]) (new Object[DEFAULT_CAPACITY]);
     }
 
+    /**
+     * Creates a stack with a initial capacity defined by the user
+     *
+     * @param initialCapacity int initial capacity
+     */
     public ArrayStack(int initialCapacity) {
         top = 0;
         stack = (T[]) (new Object[initialCapacity]);
