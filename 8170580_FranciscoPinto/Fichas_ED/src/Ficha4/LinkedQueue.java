@@ -1,31 +1,36 @@
 package Ficha4;
 
-public class LinkedQueue<T> implements QueueADT<T>{
-	private T next;
-	private T head;
-	private T tail;
-	private int count;
+import Ficha3.LinearNode;
+
+public class LinkedQueue<T> implements QueueADT<T> {
+	private LinearNode<T> head;
+	private LinearNode<T> tail;
+	private int count = 0;
 	
-	/*
-	 * Metodo construtor de LinkedQueue sem parametros iniciais introduzidos
-	 */
 	public LinkedQueue() {
 		this.head = null;
-		this.tail = null; 
+		this.tail = null;
 		count = 0;
 	}
-
+	
 	@Override
 	public void enqueue(T element) {
 		// TODO Auto-generated method stub
+		
 		if(head == null) {
-			tail = element;
-			head = element;
+			head.setElement(element);
+			tail.setElement(element);
 			count++;
 		}
+		else if(head != null && head.getNext() == null){
+			tail.setElement(element);
+			head.setNext(tail);
+		    count++;
+		}
 		else {
-			next = element;
-			tail = next;
+			LinearNode<T> temp = new LinearNode<T>(element);
+			tail.setNext(temp);
+			tail = temp;
 			count++;
 		}
 	}
@@ -33,35 +38,26 @@ public class LinkedQueue<T> implements QueueADT<T>{
 	@Override
 	public T dequeue() {
 		// TODO Auto-generated method stub
-		if(head == null) {
-			System.out.println("A queue está vazia!");
-		}
-		else if(size() == 1){
-			tail = null;
-			head = null;
-			count--;
-		}
-		else if(size() == 2) {
-			head = tail;
-			count--;
-		}
-		else {
-			head = null; //Nao sei como é suposto fazer com que head avance para o proximo elemento!!!!!!
-			count--;
-		}
-		return head;
+		if(head == null) 
+			System.out.println("Empty queue...");
+		else
+	        head = head.getNext();
+			T result = (T) head.getElement();
+	        count--;
+		return result;
 	}
 
 	@Override
 	public T first() {
 		// TODO Auto-generated method stub
-		return head;
+		T result = (T) head.getElement();
+		return result;
 	}
 
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		if (tail == null)
+		if (count == 0)
 			return true;
 		return false;
 	}
@@ -71,4 +67,5 @@ public class LinkedQueue<T> implements QueueADT<T>{
 		// TODO Auto-generated method stub
 		return count;
 	}
+
 }
