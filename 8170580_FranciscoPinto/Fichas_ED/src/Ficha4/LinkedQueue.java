@@ -16,21 +16,19 @@ public class LinkedQueue<T> implements QueueADT<T> {
 	@Override
 	public void enqueue(T element) {
 		// TODO Auto-generated method stub
-		
+		LinearNode<T> tempNode = new LinearNode<T>(element);
 		if(head == null) {
-			head.setElement(element);
-			tail.setElement(element);
+			head = tempNode;
 			count++;
 		}
 		else if(head != null && head.getNext() == null){
-			tail.setElement(element);
+			tail = tempNode;
 			head.setNext(tail);
 		    count++;
 		}
 		else {
-			LinearNode<T> temp = new LinearNode<T>(element);
-			tail.setNext(temp);
-			tail = temp;
+			tail.setNext(tempNode);
+			tail = tempNode;
 			count++;
 		}
 	}
@@ -38,11 +36,16 @@ public class LinkedQueue<T> implements QueueADT<T> {
 	@Override
 	public T dequeue() {
 		// TODO Auto-generated method stub
-		if(head == null) 
+		if(head == null) {
 			System.out.println("Empty queue...");
+		}
+		if(head.getNext() == null) {
+			head = null;
+			count--;
+		}
 		else
 	        head = head.getNext();
-			T result = (T) head.getElement();
+			T result = (T) head;
 	        count--;
 		return result;
 	}
@@ -50,7 +53,10 @@ public class LinkedQueue<T> implements QueueADT<T> {
 	@Override
 	public T first() {
 		// TODO Auto-generated method stub
-		T result = (T) head.getElement();
+		T result = null;
+		if (head != null) {
+			result = (T) head.getElement();
+		}
 		return result;
 	}
 
