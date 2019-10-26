@@ -11,6 +11,8 @@ public class TesteLinkedQueue {
 		queue1.dequeue();
 		queue1.dequeue();
 		queue1.dequeue();
+		queue1.enqueue(3);
 		System.out.println("Head: " + queue1.first());
+		System.out.println("Size: " + queue1.size());
 	}
 }

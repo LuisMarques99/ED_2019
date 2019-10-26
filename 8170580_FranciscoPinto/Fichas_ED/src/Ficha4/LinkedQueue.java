@@ -41,7 +41,6 @@ public class LinkedQueue<T> implements QueueADT<T> {
 		}
 		if(head.getNext() == null) {
 			head = null;
-			count--;
 		}
 		else
 	        head = head.getNext();
