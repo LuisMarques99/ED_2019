@@ -6,7 +6,7 @@ public class DEMO {
     public static void main(String[] args) {
         QueueADT<Integer> queue = new LinkedQueue<Integer>();
 
-        int test = 1;
+        int test = 2;
 
         switch (test) {
             case 1:
