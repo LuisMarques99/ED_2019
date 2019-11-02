@@ -1,7 +1,5 @@
 package Ficha4;
 
-import Ficha3.EmptyCollectionException;
-
 public interface QueueADT<T> {
 	/*
 	 * Adicionar elemento na cauda da queue

@@ -39,6 +39,7 @@ public class LinkedStack<T> implements StackADT<T> {
 		if (top == null)
 			throw new EmptyCollectionException("Empty list!");
 		top = (top).link;
+		@SuppressWarnings("unchecked")
 		T result = (T) top;
 		count--;
 		return result;

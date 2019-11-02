@@ -19,18 +19,16 @@ public class LinkedQueue<T> implements QueueADT<T> {
 		LinearNode<T> tempNode = new LinearNode<T>(element);
 		if(head == null) {
 			head = tempNode;
-			count++;
 		}
 		else if(head != null && head.getNext() == null){
 			tail = tempNode;
 			head.setNext(tail);
-		    count++;
 		}
 		else {
 			tail.setNext(tempNode);
 			tail = tempNode;
-			count++;
 		}
+		count++;
 	}
 
 	@Override
@@ -44,6 +42,7 @@ public class LinkedQueue<T> implements QueueADT<T> {
 		}
 		else
 	        head = head.getNext();
+			@SuppressWarnings("unchecked")
 			T result = (T) head;
 	        count--;
 		return result;

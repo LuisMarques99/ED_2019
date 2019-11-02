@@ -19,6 +19,7 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
 	/*
 	 * Metodo construtor de um CircularArrayQueue com DEFAULT_CAPACITY inicializada
 	 */
+	@SuppressWarnings("unchecked")
 	public CircularArrayQueue() {
 		circularArray = (T[])(new Object[DEFAULT_CAPACITY]);
 		head = 0;
@@ -29,6 +30,7 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
 	/*
 	 * Metodo construtor de CircularArrayQueue com tamanho definido pelo utilizador
 	 */
+	@SuppressWarnings("unchecked")
 	public CircularArrayQueue(int size) {
 		circularArray = (T[])(new Object[size]);
 		head = 0;
