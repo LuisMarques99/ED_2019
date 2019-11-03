@@ -69,12 +69,6 @@ public class ArrayList<T> implements ListADT<T>{
 			System.out.println("Element not found in array...");
 			return null;
 		}
-		if(list[first].equals(element)) {
-			removeFirst();
-		}
-		else if(list[last-1].equals(element)) {
-			removeLast();
-		}
 		else {
             for (int a = first; a < last; a++) {
                 if(list[a].equals(element)) {
