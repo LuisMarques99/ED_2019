@@ -1,6 +1,4 @@
-package Default;
-
-import sun.invoke.empty.Empty;
+package LinkedQueue;
 
 /**
  * <h3>

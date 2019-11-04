@@ -1,8 +1,5 @@
 package LinkedQueue;
 
-import Default.EmptyCollectionException;
-import Default.QueueADT;
-
 public class LinkedQueue<T> implements QueueADT<T> {
     /**
      * int that represents the number of elements of the {@link LinkedQueue Linked Queue}
@@ -38,6 +35,8 @@ public class LinkedQueue<T> implements QueueADT<T> {
         LinearNode<T> tempNode = new LinearNode<T>(element);
         if (front == null)
             front = tempNode;
+        else if (front.getNext() == null)
+            front.setNext(tempNode);
         else
             rear.setNext(tempNode);
         rear = tempNode;
@@ -58,7 +57,6 @@ public class LinkedQueue<T> implements QueueADT<T> {
         T removed = front.getElement();
         front = front.getNext();
         count--;
-
         return removed;
     }
 

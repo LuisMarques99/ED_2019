@@ -17,7 +17,7 @@ public class DEMO {
 
         StackADT<String> stack = new LinkedStack<String>();
 
-        int test = 1;
+        int test = 4;
 
         switch (test) {
             case 1:
@@ -39,7 +39,7 @@ public class DEMO {
                 break;
             case 3:
                 stack.push("I'LL BE BACK!");
-                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                System.out.println(stack.toString() + "\n\nSize: " + stack.size());
                 try {
                     stack.pop();
                 } catch (EmptyCollectionException e) {
@@ -59,7 +59,7 @@ public class DEMO {
                 stack.push("L");
                 stack.push("L");
                 stack.push("O");
-                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                System.out.println(stack.toString() + "\n\nSize: " + stack.size());
                 try {
                     System.out.print("\n\nTop: " + stack.peek());
                 } catch (EmptyCollectionException e) {
@@ -72,7 +72,7 @@ public class DEMO {
                 stack.push("L");
                 stack.push("L");
                 stack.push("O");
-                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                System.out.println(stack.toString() + "\n\nSize: " + stack.size());
                 try {
                     System.out.print("\n\nTop: " + stack.peek());
                 } catch (EmptyCollectionException e) {
@@ -111,7 +111,7 @@ public class DEMO {
                 } catch (EmptyCollectionException e) {
                     System.err.println("ERROR! You cannot remove elements from an empty stack!");
                 }
-                System.out.println(stack.toString() + "\n\nTop: " + stack.size());
+                System.out.println(stack.toString() + "\n\nSize: " + stack.size());
                 try {
                     System.out.print("\n\nTop: " + stack.peek());
                 } catch (EmptyCollectionException e) {

@@ -1,4 +1,4 @@
-package Default;
+package LinkedQueue;
 
 /**
  * <h3>
