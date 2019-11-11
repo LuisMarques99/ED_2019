@@ -1,7 +1,9 @@
-package LinkedQueue;
+package Queue;
 
 /**
- * Class that represents the structure of a {@link LinearNode Linear Node}
+ * <h3>
+ * <strong>Class that represents the structure of a {@link LinearNode Linear Node}</strong>
+ * </h3>
  *
  * @param <T> Abstract Data Type
  * @author Luis Marques

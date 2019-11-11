@@ -1,4 +1,4 @@
-package LinkedQueue;
+package Queue;
 
 /**
  * <h3>
@@ -6,6 +6,7 @@ package LinkedQueue;
  * </h3>
  *
  * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public interface QueueADT<T> {
     /**
