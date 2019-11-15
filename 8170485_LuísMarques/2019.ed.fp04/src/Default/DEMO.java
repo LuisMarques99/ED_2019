@@ -14,13 +14,13 @@ import Queue.EmptyCollectionException;
  */
 public class DEMO {
     public static void main(String[] args) {
-        QueueADT<String> queue = new ArrayQueue<String>();
+        QueueADT<Integer> queue = new ArrayQueue<Integer>();
 
-        int test = 1;
+        int test = 6;
 
         switch (test) {
             case 1:
-                queue.enqueue("Hello");
+                queue.enqueue(1);
                 System.out.println(queue.toString() + "\n\nSize: " + queue.size());
                 try {
                     System.out.println("\nFirst: " + queue.first());
@@ -46,7 +46,7 @@ public class DEMO {
                 break;
 
             case 3:
-                queue.enqueue("Hello");
+                queue.enqueue(1);
 
                 System.out.println(queue.toString() + "\n\nSize: " + queue.size());
                 try {
@@ -73,11 +73,11 @@ public class DEMO {
                 break;
 
             case 4:
-                queue.enqueue("H");
-                queue.enqueue("E");
-                queue.enqueue("L");
-                queue.enqueue("L");
-                queue.enqueue("O");
+                queue.enqueue(1);
+                queue.enqueue(2);
+                queue.enqueue(3);
+                queue.enqueue(4);
+                queue.enqueue(5);
 
                 System.out.println(queue.toString() + "\n\nSize: " + queue.size());
                 try {
@@ -89,11 +89,11 @@ public class DEMO {
                 break;
 
             case 5:
-                queue.enqueue("H");
-                queue.enqueue("E");
-                queue.enqueue("L");
-                queue.enqueue("L");
-                queue.enqueue("O");
+                queue.enqueue(1);
+                queue.enqueue(2);
+                queue.enqueue(3);
+                queue.enqueue(4);
+                queue.enqueue(5);
 
                 System.out.println(queue.toString() + "\n\nSize: " + queue.size());
                 try {
@@ -103,8 +103,13 @@ public class DEMO {
                 }
                 System.out.println("\nEmpty queue: " + queue.isEmpty());
 
-                System.out.println("\n\n\nDequeue 5 element!\n\n");
+                System.out.println("\n\n\nDequeue 5 elements!\n\n");
 
+                try {
+                    queue.dequeue();
+                } catch (EmptyCollectionException e) {
+                    System.err.println(e.getMessage());
+                }
                 try {
                     queue.dequeue();
                 } catch (EmptyCollectionException e) {
@@ -136,11 +141,11 @@ public class DEMO {
                 break;
 
             case 6:
-                queue.enqueue("H");
-                queue.enqueue("E");
-                queue.enqueue("L");
-                queue.enqueue("L");
-                queue.enqueue("O");
+                queue.enqueue(1);
+                queue.enqueue(2);
+                queue.enqueue(3);
+                queue.enqueue(4);
+                queue.enqueue(5);
 
                 System.out.println(queue.toString() + "\n\nSize: " + queue.size());
                 try {
@@ -150,8 +155,13 @@ public class DEMO {
                 }
                 System.out.println("\nEmpty queue: " + queue.isEmpty());
 
-                System.out.println("\n\n\nDequeue 3 element!\n\n");
+                System.out.println("\n\n\nDequeue 3 elements!\n\n");
 
+                try {
+                    queue.dequeue();
+                } catch (EmptyCollectionException e) {
+                    System.err.println(e.getMessage());
+                }
                 try {
                     queue.dequeue();
                 } catch (EmptyCollectionException e) {

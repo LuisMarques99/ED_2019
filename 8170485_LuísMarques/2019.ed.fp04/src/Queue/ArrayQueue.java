@@ -1,7 +1,5 @@
 package Queue;
 
-import org.omg.CORBA.Object;
-
 /**
  * <h3>
  * <strong>Class that represents the structure of an {@link ArrayQueue Array Queue}</strong>
@@ -106,7 +104,7 @@ public class ArrayQueue<T> implements QueueADT<T> {
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();
-        string.append("-> Array: <-");
+        string.append("-> Array: <-\n");
         for (int i = front; i < rear; i = (i + 1) % queue.length) {
             string.append("[").append(i).append("] -> ");
             string.append(queue[i]).append("\n");
