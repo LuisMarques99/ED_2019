@@ -1,5 +1,8 @@
 package List;
 
+import Exceptions.EmptyCollectionException;
+import Exceptions.ElementNotFoundException;
+
 import java.util.Iterator;
 
 public interface ListADT<T> extends Iterable<T> {
@@ -8,14 +11,14 @@ public interface ListADT<T> extends Iterable<T> {
      *
      * @return the first element of this list
      */
-    public T removeFirst();
+    public T removeFirst() throws EmptyCollectionException;
 
     /**
      * Removes and returns the last element from this list.
      *
      * @return the last element of this list
      */
-    public T removeLast();
+    public T removeLast() throws EmptyCollectionException;
 
     /**
      * Removes and returns the specific element of this list.
@@ -23,21 +26,21 @@ public interface ListADT<T> extends Iterable<T> {
      * @param element the element to be removed from this list
      * @return the element removed from this list
      */
-    public T remove(T element);
+    public T remove(T element) throws EmptyCollectionException, ElementNotFoundException;
 
     /**
      * Returns a reference to the first element of this list.
      *
      * @return a reference to the first element of this list
      */
-    public T first();
+    public T first() throws EmptyCollectionException;
 
     /**
      * Returns a reference of the last element of this list.
      *
      * @return a reference to the first element of this list
      */
-    public T last();
+    public T last() throws EmptyCollectionException;
 
     /**
      * Returns true if this list contains the specific target element.
