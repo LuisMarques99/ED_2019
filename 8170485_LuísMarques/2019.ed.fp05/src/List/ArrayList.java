@@ -4,23 +4,66 @@ import Exceptions.EmptyCollectionException;
 import Exceptions.ElementNotFoundException;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
+/**
+ * <h3>
+ * <strong>Abstract class that represents the structure of an {@link ArrayList Array List}</strong>
+ * </h3>
+ *
+ * @param <T> Abstract Data Type
+ */
 public abstract class ArrayList<T> implements ListADT<T> {
-    int DEFAULT_CAPACITY = 100;
-    int count;
-    int front;
-    int rear;
-    T[] list;
 
+    /**
+     * constant that represents the initial capacity of the array
+     */
+    private static final int DEFAULT_CAPACITY = 100;
+
+    /**
+     * int that represents the number of elements in the array
+     */
+    protected int count;
+
+    /**
+     * int that represents the number of modifications in the array
+     */
+    protected int modCount;
+
+    /**
+     * int that represents the position of the first element in the array
+     */
+    protected int front;
+
+    /**
+     * int that represents the position of the first element in the array
+     */
+    protected int rear;
+
+    /**
+     * array of generic elements to represent the list
+     */
+    protected T[] list;
+
+    /**
+     * Creates an empty list using the default capacity
+     */
     public ArrayList() {
         count = 0;
+        modCount = 0;
         front = 0;
         rear = 0;
         list = (T[]) (new Object[DEFAULT_CAPACITY]);
     }
 
+    /**
+     * Creates an empty list using the initial capacity defined by the user
+     *
+     * @param initialCapacity int initial capacity
+     */
     public ArrayList(int initialCapacity) {
         count = 0;
+        modCount = 0;
         front = 0;
         rear = 0;
         list = (T[]) (new Object[initialCapacity]);
@@ -42,6 +85,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
             list[i] = list[i + 1];
         }
         count--;
+        modCount++;
 
         return removed;
     }
@@ -61,6 +105,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
         list[rear - 1] = null;
         rear = rear - 1;
         count--;
+        modCount++;
 
         return removed;
     }
@@ -77,14 +122,16 @@ public abstract class ArrayList<T> implements ListADT<T> {
             throw new EmptyCollectionException("List");
         }
 
+        if (element.equals(list[front])) {
+            removeFirst();
+        }
+        if (element.equals(list[rear - 1])) {
+            removeLast();
+        }
+
         boolean found = false;
         int current = front;
 
-        if (element.equals(list[front])) {
-            removeFirst();
-        } else if (element.equals(list[rear - 1])) {
-            removeLast();
-        }
         while (list[current] != null && !found) {
             if (element.equals(list[current])) {
                 found = true;
@@ -98,6 +145,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
             list[i] = list[i + 1];
         }
         count--;
+        modCount++;
 
         return list[current];
     }
@@ -153,11 +201,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
      */
     @Override
     public boolean isEmpty() {
-        if (size() == 0) {
-            return true;
-        }
-
-        return false;
+        return (size() == 0);
     }
 
     /**
@@ -183,5 +227,90 @@ public abstract class ArrayList<T> implements ListADT<T> {
     @Override
     public String toString() {
         return "";
+    }
+
+    /**
+     * Extends the capacity of the stack with more 100(DEFAULT_CAPACITY) positions
+     */
+    private void extendCapacity() {
+        T[] newList = (T[]) (new Object[list.length + DEFAULT_CAPACITY]);
+        for (int i = 0; i < list.length; i++) {
+            newList[i] = list[i];
+        }
+        list = newList;
+    }
+
+    /**
+     * Private class that represents the structure of a {@link BasicIterator Basic Iterator}
+     */
+    private class BasicIterator implements Iterator {
+        /**
+         * int that represents the number expected modifications to make this iterator usable
+         */
+        private int expectedModCount;
+
+        /**
+         * int that represents the position of the Iterator
+         */
+        private int cursor;
+
+        /**
+         * Creates an iterator for the {@link ArrayList Array}
+         */
+        public BasicIterator() {
+            expectedModCount = modCount;
+            cursor = 0;
+        }
+
+        /**
+         * Returns {@code true} if the iteration has more elements.
+         * (In other words, returns {@code true} if {@link #next} would
+         * return an element rather than throwing an exception.)
+         *
+         * @return {@code true} if the iteration has more elements
+         */
+        @Override
+        public boolean hasNext() {
+            return (cursor != rear);
+        }
+
+        /**
+         * Returns the next element in the iteration.
+         *
+         * @return the next element in the iteration
+         * @throws NoSuchElementException if the iteration has no more elements
+         */
+        @Override
+        public T next() throws NoSuchElementException {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+
+            T element = list[cursor];
+            cursor++;
+
+            return element;
+        }
+
+        /**
+         * Removes from the underlying collection the last element returned
+         * by this iterator (optional operation).  This method can be called
+         * only once per call to {@link #next}.  The behavior of an iterator
+         * is unspecified if the underlying collection is modified while the
+         * iteration is in progress in any way other than by calling this
+         * method.
+         *
+         * @throws UnsupportedOperationException if the {@code remove}
+         *                                       operation is not supported by this iterator
+         * @throws IllegalStateException         if the {@code next} method has not
+         *                                       yet been called, or the {@code remove} method has already
+         *                                       been called after the last call to the {@code next}
+         *                                       method
+         * @implSpec The default implementation throws an instance of
+         * {@link UnsupportedOperationException} and performs no other action.
+         */
+        public void remove() {
+            throw new UnsupportedOperationException("remove");
+        }
     }
 }

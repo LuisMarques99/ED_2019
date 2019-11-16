@@ -5,6 +5,13 @@ import Exceptions.ElementNotFoundException;
 
 import java.util.Iterator;
 
+/**
+ * <h3>
+ * <strong></strong>
+ * </h3>
+ *
+ * @param <T>
+ */
 public interface ListADT<T> extends Iterable<T> {
     /**
      * Removes the first element from this list.

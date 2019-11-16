@@ -1,5 +1,12 @@
 package List;
 
+/**
+ * <h3>
+ * <strong></strong>
+ * </h3>
+ *
+ * @param <T>
+ */
 public interface UnorderedListADT<T> extends ListADT<T> {
     /**
      * Adds the specific element to the front of this list.
