@@ -107,12 +107,10 @@ public class LinkedStack<T> implements StackADT<T> {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("-> Linked Stack: <-");
-        if (top != null) {
-            string.append("\n").append(top.getElement());
-            while (top.getNext() != null) {
-                top = top.getNext();
-                string.append("\n").append(top.getElement());
-            }
+        LinearNode<T> tempNode = top;
+        while (tempNode != null) {
+            string.append("\n").append(tempNode.getElement());
+            tempNode = tempNode.getNext();
         }
 
         return string.toString();

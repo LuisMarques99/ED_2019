@@ -1,8 +1,13 @@
-package LinkedQueue;
+package Queue;
 
-import Default.EmptyCollectionException;
-import Default.QueueADT;
-
+/**
+ * <h3>
+ * <strong>Class that represents the structure of a {@link LinkedQueue Linked Queue}</strong>
+ * </h3>
+ *
+ * @param <T> Abstract Data Type
+ * @author Luis Marques
+ */
 public class LinkedQueue<T> implements QueueADT<T> {
     /**
      * int that represents the number of elements of the {@link LinkedQueue Linked Queue}
@@ -58,7 +63,6 @@ public class LinkedQueue<T> implements QueueADT<T> {
         T removed = front.getElement();
         front = front.getNext();
         count--;
-
         return removed;
     }
 
@@ -103,12 +107,10 @@ public class LinkedQueue<T> implements QueueADT<T> {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("-> Linked Queue: <-");
-        if (front != null) {
-            string.append("\n").append(front.getElement());
-            while (front.getNext() != null) {
-                front = front.getNext();
-                string.append("\n").append(front.getElement());
-            }
+        LinearNode<T> tempNode = front;
+        while (tempNode != null) {
+            string.append("\n").append(tempNode.getElement());
+            tempNode = tempNode.getNext();
         }
 
         return string.toString();

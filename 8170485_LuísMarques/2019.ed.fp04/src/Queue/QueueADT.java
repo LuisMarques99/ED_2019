@@ -1,6 +1,4 @@
-package Default;
-
-import sun.invoke.empty.Empty;
+package Queue;
 
 /**
  * <h3>
@@ -8,6 +6,7 @@ import sun.invoke.empty.Empty;
  * </h3>
  *
  * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public interface QueueADT<T> {
     /**
