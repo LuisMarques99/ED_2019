@@ -4,10 +4,11 @@ import Exceptions.ElementNotComparableException;
 
 /**
  * <h3>
- * <strong></strong>
+ * <strong>Interface to establish the contract of a {@link OrderedListADT Abstract Data Type Ordered List}</strong>
  * </h3>
  *
- * @param <T>
+ * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public interface OrderedListADT<T> extends ListADT<T> {
     /**

@@ -7,10 +7,11 @@ import java.util.Iterator;
 
 /**
  * <h3>
- * <strong></strong>
+ * <strong>Interface to establish the contract of a {@link ListADT Abstract Data Type List}</strong>
  * </h3>
  *
- * @param <T>
+ * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public interface ListADT<T> extends Iterable<T> {
     /**

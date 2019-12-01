@@ -12,13 +12,14 @@ import java.util.NoSuchElementException;
  * </h3>
  *
  * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public abstract class ArrayList<T> implements ListADT<T> {
 
     /**
      * constant that represents the initial capacity of the array
      */
-    private static final int DEFAULT_CAPACITY = 100;
+    protected static final int DEFAULT_CAPACITY = 100;
 
     /**
      * int that represents the number of elements in the array
@@ -226,13 +227,19 @@ public abstract class ArrayList<T> implements ListADT<T> {
 
     @Override
     public String toString() {
-        return "";
+        StringBuilder string = new StringBuilder();
+        string.append("-> LISTA <-\n");
+        for (int i = front; i < size(); i++) {
+            string.append("[").append(i).append("]");
+            string.append(list[i]).append("\n");
+        }
+        return string.toString();
     }
 
     /**
      * Extends the capacity of the stack with more 100(DEFAULT_CAPACITY) positions
      */
-    private void extendCapacity() {
+    protected void extendCapacity() {
         T[] newList = (T[]) (new Object[list.length + DEFAULT_CAPACITY]);
         for (int i = 0; i < list.length; i++) {
             newList[i] = list[i];

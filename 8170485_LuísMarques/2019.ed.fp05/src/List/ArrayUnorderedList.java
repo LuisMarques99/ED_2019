@@ -1,11 +1,14 @@
 package List;
 
+import Exceptions.ElementNotComparableException;
+
 /**
  * <h3>
- * <strong></strong>
+ * <strong>Class that represents the structure of an {@link ArrayUnorderedList Unordered Array List}</strong>
  * </h3>
  *
- * @param <T>
+ * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedListADT<T> {
 
@@ -31,8 +34,10 @@ public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedList
      * @param element the element to be added to this list
      */
     @Override
-    public void addToFront(T element) {
-
+    public void addToFront(T element) throws ElementNotComparableException {
+        if(!(element instanceof Comparable)){
+            throw new
+        }
     }
 
     /**

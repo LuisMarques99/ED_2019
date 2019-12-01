@@ -1,11 +1,14 @@
 package List;
 
+import Exceptions.ElementNotComparableException;
+
 /**
  * <h3>
- * <strong></strong>
+ * <strong>Interface to establish the contract of a {@link UnorderedListADT Abstract Data Type Unordered List}</strong>
  * </h3>
  *
- * @param <T>
+ * @param <T> Abstract Data Type
+ * @author Luis Marques
  */
 public interface UnorderedListADT<T> extends ListADT<T> {
     /**
@@ -13,14 +16,14 @@ public interface UnorderedListADT<T> extends ListADT<T> {
      *
      * @param element the element to be added to this list
      */
-    public void addToFront(T element);
+    public void addToFront(T element) throws ElementNotComparableException;
 
     /**
      * Adds the specific element to the rear of this list.
      *
      * @param element the element to be added to this list
      */
-    public void addToRear(T element);
+    public void addToRear(T element) throws ElementNotComparableException;
 
     /**
      * Adds the specific element after a particular element already in this list.
@@ -28,5 +31,5 @@ public interface UnorderedListADT<T> extends ListADT<T> {
      * @param element the element to be added to this list
      * @param target  the element to be referenced to add the specific element
      */
-    public void addAfter(T element, T target);
+    public void addAfter(T element, T target) throws ElementNotComparableException;
 }
