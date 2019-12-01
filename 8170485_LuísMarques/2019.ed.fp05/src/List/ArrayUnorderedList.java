@@ -36,7 +36,7 @@ public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedList
     @Override
     public void addToFront(T element) throws ElementNotComparableException {
         if(!(element instanceof Comparable)){
-            throw new
+            throw new ElementNotComparableException();
         }
     }
 
