@@ -229,7 +229,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
      */
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new BasicIterator();
     }
 
     @Override
