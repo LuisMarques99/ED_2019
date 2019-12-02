@@ -85,6 +85,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
         for (int i = 0; i < size(); i++) {
             list[i] = list[i + 1];
         }
+        rear--;
         count--;
         modCount++;
 
@@ -104,7 +105,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
 
         T removed = list[rear - 1];
         list[rear - 1] = null;
-        rear = rear - 1;
+        rear--;
         count--;
         modCount++;
 
@@ -145,6 +146,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
         for (int i = current; i < size(); i++) {
             list[i] = list[i + 1];
         }
+        rear--;
         count--;
         modCount++;
 

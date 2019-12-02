@@ -18,7 +18,7 @@ public class DEMO {
     public static void main(String[] args) throws EmptyCollectionException, ElementNotFoundException {
         ArrayUnorderedList<String> list = new ArrayUnorderedList<String>();
 
-        int testNumber = 5;
+        int testNumber = 6;
 
         switch (testNumber) {
             case 1:
@@ -58,8 +58,28 @@ public class DEMO {
                 break;
 
             case 5:
+                list.addToFront("string 2");
+                list.addAfter("string 3", "string 2");
+                list.addToRear("string 5");
+                list.addAfter("string 4", "string 3");
                 list.addToFront("string 1");
-                list.addAfter("string 2", "string 1");
+
+                System.out.println(list.toString());
+                System.out.println("\nFirst: " + list.first());
+                System.out.println("\nLast: " + list.last());
+                System.out.println("\nEmpty list: " + list.isEmpty());
+                break;
+
+            case 6:
+                list.addToFront("string 2");
+                list.addAfter("string 3", "string 2");
+                list.addToRear("string 5");
+                list.addAfter("string 4", "string 3");
+                list.addToFront("string 1");
+                list.addToFront("string 0");
+                list.removeFirst();
+                list.removeLast();
+                list.remove("string 4");
 
                 System.out.println(list.toString());
                 System.out.println("\nFirst: " + list.first());
