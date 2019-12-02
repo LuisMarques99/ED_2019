@@ -77,6 +77,14 @@ public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedList
             extendCapacity();
         }
 
-        
+        int index = getElementIndex(target) + 1;
+
+        for (int i = rear; i > index; i--) {
+            list[i] = list[i - 1];
+        }
+        list[index] = element;
+        rear++;
+        count++;
+        modCount++;
     }
 }
