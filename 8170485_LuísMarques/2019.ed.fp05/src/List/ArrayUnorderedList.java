@@ -34,16 +34,18 @@ public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedList
      * @param element the element to be added to this list
      */
     @Override
-    public void addToFront(T element) throws ElementNotComparableException {
-        if (!(element instanceof Comparable)) {
-            throw new ElementNotComparableException();
-        }
-
+    public void addToFront(T element) {
         if (size() == list.length) {
             extendCapacity();
         }
 
+        for (int i = rear; i > 0; i--) {
+            list[i] = list[i - 1];
+        }
         list[front] = element;
+        rear++;
+        count++;
+        modCount++;
     }
 
     /**
@@ -53,7 +55,14 @@ public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedList
      */
     @Override
     public void addToRear(T element) {
+        if (size() == list.length) {
+            extendCapacity();
+        }
 
+        list[rear] = element;
+        rear++;
+        count++;
+        modCount++;
     }
 
     /**
@@ -64,6 +73,10 @@ public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedList
      */
     @Override
     public void addAfter(T element, T target) {
+        if (size() == list.length) {
+            extendCapacity();
+        }
 
+        
     }
 }

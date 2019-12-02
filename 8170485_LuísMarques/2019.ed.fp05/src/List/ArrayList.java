@@ -248,6 +248,23 @@ public abstract class ArrayList<T> implements ListADT<T> {
     }
 
     /**
+     * Returns the index of the element in the array or returns -1 if the element is not in the array
+     *
+     * @param element element to get the index from
+     * @return int index of the element or -1 if the element is not in the array
+     */
+    protected int getElementIndex(T element) {
+        int index = -1;
+        for (int i = 0; i < size(); i++) {
+            if (element.equals(list[i])) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    /**
      * Private class that represents the structure of a {@link BasicIterator Basic Iterator}
      */
     private class BasicIterator implements Iterator {
