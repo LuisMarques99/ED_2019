@@ -85,6 +85,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
         for (int i = 0; i < size(); i++) {
             list[i] = list[i + 1];
         }
+        list[rear - 1] = null;
         rear--;
         count--;
         modCount++;
@@ -125,15 +126,16 @@ public abstract class ArrayList<T> implements ListADT<T> {
         }
 
         if (element.equals(list[front])) {
-            removeFirst();
+            return removeFirst();
         }
         if (element.equals(list[rear - 1])) {
-            removeLast();
+            return removeLast();
         }
 
         boolean found = false;
         int current = front;
 
+        //Find the element
         while (list[current] != null && !found) {
             if (element.equals(list[current])) {
                 found = true;
@@ -143,9 +145,12 @@ public abstract class ArrayList<T> implements ListADT<T> {
         if (!found) {
             throw new ElementNotFoundException("List");
         }
+
+        //Remove the element
         for (int i = current; i < size(); i++) {
             list[i] = list[i + 1];
         }
+        list[rear - 1] = null;
         rear--;
         count--;
         modCount++;
