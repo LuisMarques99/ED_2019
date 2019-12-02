@@ -230,7 +230,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
         StringBuilder string = new StringBuilder();
         string.append("-> LISTA <-\n");
         for (int i = front; i < size(); i++) {
-            string.append("[").append(i).append("]");
+            string.append("[").append(i).append("] ");
             string.append(list[i]).append("\n");
         }
         return string.toString();

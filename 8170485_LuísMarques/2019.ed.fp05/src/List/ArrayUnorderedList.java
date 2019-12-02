@@ -1,6 +1,7 @@
 package List;
 
 import Exceptions.ElementNotComparableException;
+import Exceptions.ElementNotFoundException;
 
 /**
  * <h3>
@@ -72,9 +73,13 @@ public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedList
      * @param target  the element to be referenced to add the specific element
      */
     @Override
-    public void addAfter(T element, T target) {
+    public void addAfter(T element, T target) throws ElementNotFoundException {
         if (size() == list.length) {
             extendCapacity();
+        }
+
+        if (!contains(target)){
+            throw new ElementNotFoundException("List");
         }
 
         int index = getElementIndex(target) + 1;

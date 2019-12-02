@@ -1,6 +1,7 @@
 package List;
 
 import Exceptions.ElementNotComparableException;
+import Exceptions.ElementNotFoundException;
 
 /**
  * <h3>
@@ -31,5 +32,5 @@ public interface UnorderedListADT<T> extends ListADT<T> {
      * @param element the element to be added to this list
      * @param target  the element to be referenced to add the specific element
      */
-    public void addAfter(T element, T target);
+    public void addAfter(T element, T target) throws ElementNotFoundException;
 }
