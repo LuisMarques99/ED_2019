@@ -1,4 +1,4 @@
-package ficha9;
+package Ficha9;
 
 import java.util.Iterator;
 

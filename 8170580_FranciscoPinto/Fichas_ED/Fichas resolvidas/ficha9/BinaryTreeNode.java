@@ -1,4 +1,4 @@
-package ficha9;
+package Ficha9;
 
 public class BinaryTreeNode<T> {
 	protected T element;
