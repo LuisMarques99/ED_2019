@@ -1,6 +1,5 @@
 package List;
 
-import Exceptions.ElementNotComparableException;
 import Exceptions.ElementNotFoundException;
 
 /**
