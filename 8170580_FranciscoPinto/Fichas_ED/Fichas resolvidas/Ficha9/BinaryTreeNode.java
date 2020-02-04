@@ -1,15 +1,16 @@
 package Ficha9;
 
 public class BinaryTreeNode<T> {
-	protected T element;
-	protected BinaryTreeNode<T> left , right;
+	public T element;
+	public BinaryTreeNode<T> left;
+	public BinaryTreeNode<T> right;
 	
 	/**
 	 * Creates a new tree node with the specified data.
 	 * 
 	 * @param obj the element that will become part of the new tree node
 	 */
-	BinaryTreeNode (T obj){
+	public BinaryTreeNode (T obj){
 		element = obj;
 		left = null;
 		right = null;

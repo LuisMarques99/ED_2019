@@ -1,5 +1,6 @@
 package Ficha1; //Parte 1
 
+@SuppressWarnings("rawtypes")
 public class Pair <T extends Comparable> {
 	private T first;
 	private T second;
@@ -30,7 +31,8 @@ public class Pair <T extends Comparable> {
         this.second = second;
     }
 
-    public T max() {
+    @SuppressWarnings("unchecked")
+	public T max() {
         if (first.compareTo(second) >= 0) {
             return first;
         } else {

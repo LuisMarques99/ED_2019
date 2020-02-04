@@ -42,6 +42,7 @@ public class TwoTypePair <T1 , T2>{
 			return false;
 		}
 		else {
+			@SuppressWarnings("rawtypes")
 			TwoTypePair otherPair = (TwoTypePair) otherObject;
 			return (first.equals(otherPair.first) && second.equals(otherPair.second));
 		}

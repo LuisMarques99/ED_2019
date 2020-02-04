@@ -1,5 +1,6 @@
 package Ficha1; //Parte 1
 
+@SuppressWarnings("rawtypes")
 public class UnorderedPair<T extends Comparable> extends Pair<T>{
 	
 	public UnorderedPair() {
@@ -19,7 +20,8 @@ public class UnorderedPair<T extends Comparable> extends Pair<T>{
             return false;
         } else {
             //Se os pares desordenados forem iguais mesmo que nao sejam da mesmo posicao, irá retornar true!
-            UnorderedPair<T> otherPair
+            @SuppressWarnings("unchecked")
+			UnorderedPair<T> otherPair
                     = (UnorderedPair<T>) otherObject;
             return (getFirst().equals(otherPair.getFirst())
                     && getSecond().equals(otherPair.getSecond()))

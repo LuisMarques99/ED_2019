@@ -198,7 +198,7 @@ public class ArrayBinaryTree<T> implements BinaryTreeADT<T>{
 	 */
 	private void levelorder(int node, ArrayUnorderedList<T> tempList) {
 		// TODO Auto-generated method stub
-		//NAO CONSEGUI FAZER ESTA...
+		System.out.println("levelorder() not implemented yet.");
 	}
 
 }
